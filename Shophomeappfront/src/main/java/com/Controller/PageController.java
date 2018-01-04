@@ -1,15 +1,30 @@
 package com.Controller;
 
 
+import java.util.Collection;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dao.ProductDAO;
 
 
 @Controller
 public class PageController {
 
-	
+	@Autowired
+
+	ProductDAO productDAO;
+
+
 	@RequestMapping(value="/Login")
 	public String showLoginPage()
 	{
@@ -21,11 +36,49 @@ public class PageController {
 	{
 		return "User";
 	}
-	@RequestMapping(value="/Admin")
-	public String showAdminPage()
+	
+	@RequestMapping("/contactus")	
+ 	public String ContactUs()
+ 	{
+ 	  
+ 		return "ContactUs";
+ 	}
+ 
+	@RequestMapping(value="/login_success")
+	public String loginSuccess(Model m,HttpSession session)
 	{
-		return "Admin";
+		String page_Url=null;
+		String role=null;
+		boolean loggedIn=false;
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		
+		String logged_Uname = authentication.getName();
+		
+		session.setAttribute("uname",logged_Uname);
+		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>)authentication.getAuthorities();
+		
+		for(GrantedAuthority role1:authorities)
+		{
+			if(role1.getAuthority().equals("ROLE_ADMIN"))
+			{
+				loggedIn=true;
+				page_Url="Admin";
+				role="ROLE_ADMIN";
+			}
+			else
+			{
+				m.addAttribute("productList", productDAO.retrieveProduct());
+				loggedIn=true;
+				page_Url="ClientHome";
+				role="ROLE_USER";
+				
+			}
+		}
+		session.setAttribute("loggedIn", loggedIn);
+		session.setAttribute("role", role);
+		return page_Url;
 	}
+
 	
 }
 

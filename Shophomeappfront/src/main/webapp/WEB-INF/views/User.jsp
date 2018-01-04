@@ -1,102 +1,190 @@
-<%@ page language="java" contentType="text/html" import="com.model.User"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <%@ page language="java" contentType="text/html" import="com.model.User"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+<!DOCTYPE html>
 <html>
-<head>
-<title>Sign Up</title>
-<style>
-body {
-	background-image: url("resources/Images/background0.jpg");
-	background-size: cover;
-}
+<head>  
 
-.ss {
-	width: 400px;
-	height: 270px;
-	background-color: rgba(0, 0, 0,);
-	margin: 0 auto;
-	margin-top: 40px;
-	padding-top: 40px;
-	padding-left: 50px;
-}
+<title>Web App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf=8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  >
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" language="javascript">
+function formValidation()  
+{  
+var pword = document.registration.pword;  
+var uname = document.registration.uname;  
+var adss = document.registration.adss;    
+var email = document.registration.email;  
+var mnum=document.registration.mnum;
 
-.ss input[type="text"] {
-	width: 200px;
-	height: 20px;
-	bordar: 0;
-	border radius: 5px;
-	-webkit-border-radius: 5px;
-	-o-border-radius: 5px;
+if(allLetter(uname))  
+{  
+if(ValidateEmail(email)) 
+{
+if(pword_validation(pword,7,12)) 
+{   
+if(phonenumber(mnum))
+{
+if(alphabetic(adss))  
+{   
 }
+}  
+}   
+}  
+}   
+ 
+return false;  
+} 
 
-.ss input[type="password"] {
-	width: 200px;
-	height: 20px;
-	bordar: 0;
-	border radius: 5px;
-	-webkit-border-radius: 5px;
-	-o-border-radius: 5px;
-}
 
-.ss input[type="mail"] {
-	width: 200px;
-	height: 20px;
-	bordar: 0;
-	border radius: 5px;
-	-webkit-border-radius: 5px;
-	-o-border-radius: 5px;
-}
-</style>
-<script>
-		</script>
+function pword_validation(pword,mx,my)  
+{  
+var pword_len = pword.value.length;  
+if (pword_len == 0 ||pword_len >= my || pword_len < mx)  
+{  
+alert("Password should not be empty / length be between "+mx+" to "+my);  
+pword.focus();  
+return false;  
+}  
+return true;  
+}  
+function allLetter(uname)  
+{   
+var letters = /^[A-Za-z]+$/;  
+if(uname.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Username must have alphabet characters only');  
+uname.focus();  
+return false;  
+}  
+}  
+function alphabetic(adss)  
+{   
+var letters = /^[A-Za-z]+$/; 
+if(adss.value.match(letters))  
+{  
+alert('Form Succesfully Submitted');  
+window.location.reload()  
+return true;  
+}  
+else  
+{  
+alert('User address must have alphabetic characters only');  
+adss.focus();  
+return false;  
+}  
+}  
 
+function phonenumber(mnum)  
+{  
+  var phoneno = /^\d{10}$/;  
+  if((mnum.value.match(phoneno)))
+        {  
+      return true;  
+        }  
+      else  
+        {  
+        alert("UserPhoneNo must have numeric characters only");  
+        return false;  
+        }  
+}  
+  
+function ValidateEmail(email)  
+{  
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+if(email.value.match(mailformat))  
+{  
+return true;  
+}  
+else  
+{  
+alert(" Empty/Invalid email address!");  
+email.focus();  
+return false;  
+}  
+} 
+
+</script> 
 </head>
-<body>
-	<form:form action="adduser" modelAttribute="user">
-		<div class="ss">
-			<fieldset>
-				<legend>NEWUSER FORM</legend>
-				<table>
-					<tr>
-						<td>USERNAME:</td>
-						<td><input type="text" placeholder="ENTER USERNAME"
-							name="uname" required></td>
-					</tr>
-					<tr>
-						<td>PASSWORD:</td>
-						<td><input type="password" placeholder="ENTER PASSWORD"
-							name="pword" required></td>
-					</tr>
-					<tr>
-						<td>DATE OF BIRTH:</td>
-						<td><input type="text" placeholder="ENTER DOB" name="birthd"
-							required></td>
-					</tr>
-					<tr>
-						<td>ADDRESS:</td>
-						<td><input type="text" placeholder="ENTER ADDRESS"
-							name="adss" required></td>
-					</tr>
-					<tr>
-					<tr>
-						<td>EMAIL:</td>
-						<td><input type="mail" placeholder="ENTER EMAIL" name="email"
-							required></td>
-					</tr>
-					<tr>
-						<td>MOBILE NUMBER:</td>
-						<td><input type="text" placeholder="+91" name="mnum" required></td>
-					</tr>
-					<tr>
-						<td><input type="submit" name="submit"></td>
-					</tr>
-				</table>
-				<div>
-			</fieldset>
-	</form:form>
-	<jsp:include page="footer.jsp"></jsp:include>
+<body onload="document.registration.userid.focus();">
+
+<jsp:include page="header.jsp"></jsp:include>
+<div class="container">
+ <%-- <form:form  name="registration"  onSubmit="return formValidation();"> --%>
+<form:form action="adduser" modelAttribute="user">
+
+<div class="col-lg-12">
+<center>
+<h3> REGISTER FORM</h3>
+</center>
+<div class="col-lg-10">
+<div class="row">
+
+        
+<div class="form-group">
+<div class="input-group">
+<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+<input name="uname" class="form-control"  placeholder="Enter the username" />
+</div>
+</div>
+<div class="form-group">
+<div class="input-group">
+<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+<input name="pword" class="login-field  login-field-password form-control input-mg" name="pword" id="pword" type="password" placeholder="Enter the password" />
+
+                    	</div>
+                    	</div>
+<div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                            <input name="email" class="form-control"  placeholder="Enter the EmailId"  />
+                        </div>
+                    	</div>
+                    
+                    	<div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+                            <input name="adss" class="form-control"  placeholder="Enter the address"  />
+                            
+                        </div>
+                    	</div> 
+                    
+                    	<div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt"></span></span>
+                            <input name="mnum" class="form-control"  placeholder="Enter the PhoneNo" />
+                        </div>
+                    	</div> 
+                    
+             
+             <%-- <center><input type="submit" value="Insert"/></center> --%>
+<center>
+<button type="submit" class="btn btn-lg btn-info"  value="Submit">Submit</button> 
+
+
+	<button type="reset"  class="btn btn-lg btn-info">Cancel</button>
+	
+	</center>
+	
+	
+ </div>  
+ </div>
+ </div>         
+ </form:form>               
+<%-- </form:form>  --%>
+</div>  
+
+
+
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
-</html>
+</html> 

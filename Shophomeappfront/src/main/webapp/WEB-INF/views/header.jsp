@@ -39,11 +39,10 @@ body {
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li><a herf="#">Home </a></li>
-				<li><ahref"#">Product</a>
-      <li><a href="#">About</a></li>
-      
-      
+				<li><a herf="index.jsp">Home </a></li>
+				<li><a href="userHome">Product List</a>
+       <li><a href="contactus">ContactUs</a></li>
+    
     
 			</ul>
 			<form class="navbar-form navbar-left" action="/action_page.php">

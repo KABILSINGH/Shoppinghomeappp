@@ -7,7 +7,7 @@ public class User
 {
 	@Id
     String uname;
-	String Role, Enabled, pword, birthd, adss, email, mnum;
+	String Role, Enabled, pword,adss, email, mnum;
 	public String getUname() {
 		return uname;
 	}
@@ -32,12 +32,6 @@ public class User
 	public void setPword(String pword) {
 		this.pword = pword;
 	}
-	public String getBirthd() {
-		return birthd;
-	}
-	public void setBirthd(String birthd) {
-		this.birthd = birthd;
-	}
 	public String getAdss() {
 		return adss;
 	}
@@ -56,4 +50,5 @@ public class User
 	public void setMnum(String mnum) {
 		this.mnum = mnum;
 	}
+	
 }

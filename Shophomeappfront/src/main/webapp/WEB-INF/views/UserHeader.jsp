@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Shopping Homeapp</title>
+<title>WebApp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf=8">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
@@ -13,43 +14,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<style>
-
-
-.navbar {
-  min-height: 80px;
-}
-
-.navbar-brand {
-  padding: 0 15px;
-  height: 80px;
-  line-height: 80px;
-}
-
-.navbar-toggle {
-  /* (80px - button height 34px) / 2 = 23px */
-  margin-top: 23px;
-  padding: 9px 10px !important;
-}
-
-@media (min-width: 768px) {
-  .navbar-nav > li > a {
-    /* (80px - line-height of 27px) / 2 = 26.5px */
-    padding-top: 26.5px;
-    padding-bottom: 26.5px;
-    line-height: 27px;
-  }
-}
-</style>
-
 </head>
+
 <body>
 
 <nav id ="navbar-red" class="navbar navbar-inverse navbar-static-top" role="navigation">
 <div class="container">
-     
 <ul class="nav navbar-nav">
-  
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-nav">
 <span class="icon bar"></span>
 <span class="icon bar"></span>
@@ -58,28 +29,50 @@
 </button>
 </ul>
 </div>
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">ADMIN HOMEPAGE</a>
-    </div>
+ 
+    	
+<ul class="nav navbar-nav">
+	
+ <li><a href="index.jsp">Home</a></li>
+<!--  <li><a href="userHome">Product List</a></li>
+ -->
 <div class="collapse navbar-collapse" id="bs-example-nav">
+</div>
+</ul>
 	
 <ul class="nav navbar-nav">
 	
-    <li><a href="AdminHome">Home</a></li>
-   <!-- <li><a href="Admin"><i class="fa fa-plus-square" aria-hidden = "true"></i>Admin</a></li>  -->
-   <li><a href="Admin">ADD PRODUCT</a></li>
-     <li><a href="category">Category</a></li>
-      <li><a href="product">Product</a></li>
-      <li><a href="Supplier">Supplier</a></li>
-      
-</ul> 
-    <%-- <ul class="nav navbar-nav navbar-right">    
-     <li><a href="#"><span class="glyphicon glyphicon-user"></span>${sessionScope.uname}</a></li>
+ <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">SAMSUNG</a></li>
+          <li><a href="#">LG</a></li>
+          <li><a href="#">BUTTERFLY</a></li> 
+          
+          <%-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <c:forEach var="catVal" items="${catList}">
+          <li><a href="${pageContext.request.contextPath}/productCustList?catId=${catVal.catId}">${catVal.catName }</a></li
+          ></c:forEach> --%>
+    </ul>
+   
+      </li>
+ <li><a href="${pageContext.request.contextPath }/goToCart">My Cart<i class="fa fa-cart-plus" aria-hidden="true"></i></a> </li>
+
+ 
+</ul>  
+
+
+
+    <ul class="nav navbar-nav navbar-right">
+    
+    
+     <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome ${sessionScope.username}</a></li>
       <li><a href="index.jsp"><span class="glyphicon glyphicon-log-in"></span> SignOut</a></li>
     </ul>
-  --%>
 
-</div>
+
+</ul>
+
 
 </nav>
 

@@ -180,5 +180,32 @@ public class ProductController
 		m.addAttribute("supplierList",supplierDAO.retrieveSupplier());
 		/*m.addAttribute("userList",userDAO.retrieveUser());*/
 	}
-	
+	@RequestMapping(value="productDetails/{pid}")
+	public String showProductDetails(@PathVariable("pid")int pid,Model m)
+	{
+		Product product = productDAO.getProduct(pid);
+		m.addAttribute("product",product);
+		return "ProductDetails";
+	}
+	@RequestMapping(value="userHome")	
+	public String showProducts(Model m)
+	{
+		List<Product> listProducts=productDAO.retrieveProduct();
+		m.addAttribute("productList",listProducts);
+		return "UserHome";
+	}
+	@RequestMapping(value="uhome")	
+	public String showUhome(Model m)
+	{
+		List<Product> listProducts=productDAO.retrieveProduct();
+		m.addAttribute("productList",listProducts);
+		return "Uhome";
+	}
+	@RequestMapping(value="productDesc/{pid}")
+	public String showProductDesc(@PathVariable("pid")int pid,Model m)
+	{
+		Product product = productDAO.getProduct(pid);
+		m.addAttribute("product",product);
+		return "ProductDesc";
+	}
 }

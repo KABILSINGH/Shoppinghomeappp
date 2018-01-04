@@ -22,19 +22,12 @@
 <div class="container">
   <h2>WELCOME ADMIN</h2>
   <ul class="nav nav-tabs">
-    <li><a href="#home">Home</a></li>
     <li><a href="#menu1">Suppiler</a></li>
     <li><a href="#menu2">Category</a></li>
     <li><a href="#menu3">Product</a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-       <button type="submit" class="btn btn-default">Check Suppiler</button>
-      <button type="submit" class="btn btn-default">Check Category</button>
-       <button type="submit" class="btn btn-default">Check Product</button>
-    </div>
     <div id="menu1" class="tab-pane fade">
     <div class="container">
   <h2>Suppiler</h2>

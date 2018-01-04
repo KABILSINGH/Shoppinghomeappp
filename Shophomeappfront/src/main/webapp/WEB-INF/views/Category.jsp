@@ -8,12 +8,16 @@
 </head>
 <body>
 <jsp:include page="AdminHeader.jsp"></jsp:include>
-<table cellspacing="2" align="center" >
+<div class="container">
+<table class="table table-bordered table-hover" >
+<thead>
 <tr bgcolor="gray">
-	<td>CATEGORY ID:</td>
-	<td>CATEGORY NAME:</td>
-	<td>Operation</td>
+	<th>CATEGORY ID:</th>
+	<th>CATEGORY NAME:</th>
+	<th>OPERATION</th>
 </tr>
+</thead>
+<tbody>
 <c:forEach items="${categoryList}" var="category">
 	<tr bgcolor="cyan">
 		<td>${category.catid}</td>
@@ -24,8 +28,8 @@
 		</td>
 	</tr>
 </c:forEach>
-
+</tbody>
 </table>
-
+</div>
 </body>
 </html>
