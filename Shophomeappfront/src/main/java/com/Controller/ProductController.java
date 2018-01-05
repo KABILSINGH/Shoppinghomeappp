@@ -33,6 +33,8 @@ public class ProductController
 	@Autowired
 	SupplierDAO supplierDAO;
 	
+	
+	
 	/*
 	@RequestMapping(value="AddProduct",method=RequestMethod.POST)
 	public String addProduct(@ModelAttribute("product")Product product,Model m)

@@ -22,21 +22,34 @@
 <br>
 <br>
 <div class="container">
-  <div class="jumbotron">
-  <form action="perform_login" method="post">
+<div class="jumbotron">
+<h2><font color="black">Login Page</font></h2>
+<div class="row">
+  
+  <form action="perform_login" value="login" method="post">  
+   
     <div class="form-group">
-      <label>UserName</label>
-      <input type="text" class="form-control" placeholder="Enter username" name="uname" required>
+    <div style="margin-bottom: 25px" class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input type="text" class="form-control" placeholder="Enter ID" name="username" required>
     </div>
+    </div>
+    
+    
     <div class="form-group">
-      <label>Password</label>
-      <input type="password" class="form-control" placeholder="Enter password" name="pword" required>
+    <div style="margin-bottom: 25px" class="input-group">
+     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input type="password" class="form-control" placeholder="Enter password" name="password" size="35" required>
     </div>
-    <a href="User">Create Account</a>
-    <br>
-  <center> <button type="submit" class="btn btn-lg btn-info">Submit</button></center>
+    </div>
+       
+    
+    <button type="button" class="btn btn-lg btn"><a href="user">Create Account</a></button>
+	<button type="submit" class="btn btn-lg btn">Submit</button>	    
+    
   </form>
-</div>
+  </div>
+  </div>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>

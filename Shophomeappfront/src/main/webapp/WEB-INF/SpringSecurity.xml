@@ -25,8 +25,8 @@
 		<security:authentication-provider>
 			<security:jdbc-user-service 
 				data-source-ref="dataSource"
-			 	users-by-username-query="select uname,pword,enabled from User where uname=?"
-				authorities-by-username-query="select uname,role from User where uname=?"/>
+			 	users-by-username-query="select username,userpassword,enabled from User where username=?"
+				authorities-by-username-query="select username,role from User where username=?"/>
 
 		</security:authentication-provider>
  	   </security:authentication-manager>

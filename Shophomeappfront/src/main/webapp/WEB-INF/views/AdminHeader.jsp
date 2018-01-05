@@ -59,25 +59,25 @@
 </ul>
 </div>
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">ADMIN HOMEPAGE</a>
+      <a class="navbar-brand" href="adminHome">ADMIN HOMEPAGE</a>
     </div>
 <div class="collapse navbar-collapse" id="bs-example-nav">
 	
 <ul class="nav navbar-nav">
 	
-    <li><a href="AdminHome">Home</a></li>
+    <li><a href="adminHome">Home</a></li>
    <!-- <li><a href="Admin"><i class="fa fa-plus-square" aria-hidden = "true"></i>Admin</a></li>  -->
-   <li><a href="Admin">ADD PRODUCT</a></li>
+   <li><a href="admin">ADD PRODUCT</a></li>
      <li><a href="category">Category</a></li>
       <li><a href="product">Product</a></li>
       <li><a href="Supplier">Supplier</a></li>
       
 </ul> 
-    <%-- <ul class="nav navbar-nav navbar-right">    
-     <li><a href="#"><span class="glyphicon glyphicon-user"></span>${sessionScope.uname}</a></li>
+     <ul class="nav navbar-nav navbar-right">    
+     <li><a href="#"><span class="glyphicon glyphicon-user"></span>${sessionScope.username}</a></li>
       <li><a href="index.jsp"><span class="glyphicon glyphicon-log-in"></span> SignOut</a></li>
     </ul>
-  --%>
+  
 
 </div>
 

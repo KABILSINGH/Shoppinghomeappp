@@ -22,16 +22,17 @@ public class AdminController {
 	
 	@Autowired
 	SupplierDAO supplierDAO;
-	@RequestMapping(value="/Admin")
+	
+	@RequestMapping(value="/admin")
 	public String showAdminPage()
 	{
 		return "Admin";
 	}
-	@RequestMapping(value="/AdminHome")
+	/*@RequestMapping(value="/AdminHome")
 	public String showAdminHomePage()
 	{
 		return "AdminHome";
-	}
+	}*/
 	
 	@ModelAttribute
 	public void fetchData(Model m)

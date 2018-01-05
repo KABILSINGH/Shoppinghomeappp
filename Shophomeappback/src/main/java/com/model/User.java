@@ -1,18 +1,21 @@
 package com.model;
 
 import javax.persistence.*;
+
+
 @Entity
 @Table
 public class User
-{
+{ 
 	@Id
-    String uname;
-	String Role, Enabled, pword,adss, email, mnum;
-	public String getUname() {
-		return uname;
+	String userName;	
+	String Role,Enabled,userEmail,userPassword,userAddress,userPhone;
+
+	public String getUserPhone() {
+		return userPhone;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
 	}
 	public String getRole() {
 		return Role;
@@ -26,29 +29,28 @@ public class User
 	public void setEnabled(String enabled) {
 		Enabled = enabled;
 	}
-	public String getPword() {
-		return pword;
+	public String getUserName() {
+		return userName;
 	}
-	public void setPword(String pword) {
-		this.pword = pword;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	public String getAdss() {
-		return adss;
+	public String getUserEmail() {
+		return userEmail;
 	}
-	public void setAdss(String adss) {
-		this.adss = adss;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
-	public String getEmail() {
-		return email;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
-	public String getMnum() {
-		return mnum;
+	public String getUserAddress() {
+		return userAddress;
 	}
-	public void setMnum(String mnum) {
-		this.mnum = mnum;
-	}
-	
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}	
 }

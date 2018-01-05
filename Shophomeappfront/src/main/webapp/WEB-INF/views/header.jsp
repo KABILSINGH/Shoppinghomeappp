@@ -11,6 +11,7 @@ body {
 	background-image: url(.jpg);
 	background-size: cover;
 }
+
 </style>
 </head>
 <meta charset="utf-8">
@@ -57,10 +58,10 @@ body {
 				</div>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-			 <li><a href="Admin">Admin</a></li>
-				<li><a href="Login"><span class="glyphicon glyphicon-user"></span>
+			<!--  <li><a href="Admin">Admin</a></li> -->
+				<li><a href="login"><span class="glyphicon glyphicon-user"></span>
 						Login</a></li>
-				<li><a href="User"><span class="glyphicon glyphicon-log-in"></span>
+				<li><a href="user"><span class="glyphicon glyphicon-log-in"></span>
 						Sign Up</a></li>
 			</ul>
 		</div>
