@@ -100,7 +100,7 @@ $(document).ready(function () {
 	<td>Product Name</td>
 	<td>Product Stock</td>
 	<td>Price</td>
-    <td>CatName</td>
+    <td>Category Name</td>
     <td>Image</td>
 	
 </tr>

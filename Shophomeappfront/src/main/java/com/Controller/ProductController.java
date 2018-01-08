@@ -18,9 +18,11 @@ import org.springframework.web.multipart.MultipartFile;
 import com.dao.CategoryDAO;
 import com.dao.ProductDAO;
 import com.dao.SupplierDAO;
+import com.dao.UserDAO;
 import com.model.Category;
 import com.model.Product;
 import com.model.Supplier;
+
 
 @Controller
 public class ProductController 
@@ -32,6 +34,9 @@ public class ProductController
 	
 	@Autowired
 	SupplierDAO supplierDAO;
+	
+	@Autowired
+	UserDAO userDAO;
 	
 	
 	
@@ -180,7 +185,7 @@ public class ProductController
 	{
 		m.addAttribute("categoryList",categoryDAO.retrieveCategory());
 		m.addAttribute("supplierList",supplierDAO.retrieveSupplier());
-		/*m.addAttribute("userList",userDAO.retrieveUser());*/
+		m.addAttribute("userList",userDAO.retrieveUser());
 	}
 	@RequestMapping(value="productDetails/{pid}")
 	public String showProductDetails(@PathVariable("pid")int pid,Model m)

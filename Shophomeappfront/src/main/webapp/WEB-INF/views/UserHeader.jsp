@@ -33,7 +33,7 @@
     	
 <ul class="nav navbar-nav">
 	
- <li><a href="index.jsp">Home</a></li>
+ <li><a href="clienthome">Home</a></li>
 <!--  <li><a href="userHome">Product List</a></li>
  -->
 <div class="collapse navbar-collapse" id="bs-example-nav">
@@ -44,9 +44,9 @@
 	
  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">SAMSUNG</a></li>
-          <li><a href="#">LG</a></li>
-          <li><a href="#">BUTTERFLY</a></li> 
+          <li><a href="uhome">SAMSUNG</a></li>
+          <li><a href="uhome">LG</a></li>
+          <li><a href="uhome">BUTTERFLY</a></li> 
           
           <%-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
           <ul class="dropdown-menu">

@@ -26,7 +26,7 @@ public class CartDAOImpl
 	public void insert(Cart cart)
 	{
 		Session session = sessionFac.openSession();
-		session .beginTransaction();
+		session.beginTransaction();
 		session.persist(cart);
 		session.getTransaction().commit();
 	}

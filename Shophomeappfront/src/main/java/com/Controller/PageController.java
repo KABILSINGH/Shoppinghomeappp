@@ -45,8 +45,7 @@ public class PageController {
 		return "ContactUs";
 	}
 	
-	
-	
+		
 	@RequestMapping(value="/login_success")
 	public String loginSuccess(Model m,HttpSession session)
 	{

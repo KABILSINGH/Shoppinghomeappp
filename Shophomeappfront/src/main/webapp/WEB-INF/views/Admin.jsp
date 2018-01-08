@@ -127,6 +127,24 @@
   </table>
       </div>
     </div>
+    <div class="form-group">
+				<h3 class="input-title">Category Name:</h3>
+			<td>	<select class="form-control" name="catname" required>
+				<option value="">----category choices----</option>
+				<c:forEach items="${catList}" var="category">
+				<option value="${category.catname}">${category.catname}</option></c:forEach>
+					
+				</select></td>
+			</div>
+			
+			<div class="form-group">
+				<h3 class="input-title">Supplier Id:</h3>
+			<td>	<select class="form-control" name="supid" required>
+				<option value=""> ----supplier choices----</option>
+				<c:forEach items="${supList}" var="supplier">
+				<option value="${supplier.supid}">${supplier.supid}</option></c:forEach>
+				</select></td>
+			</div>
      <%-- <div class="form-group">
 				      <label class="control-label col-sm-2">CATEGORY NAME:</label>
 				<td>	<select class="form-control" name="catname"  >
