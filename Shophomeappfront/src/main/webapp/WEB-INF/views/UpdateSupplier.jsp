@@ -48,7 +48,7 @@
 		<td>${supplier.supname}</td>
 		<td>${supplier.supaddress}</td>
 		<td>
-			<a href="<c:url value="deleteSupplier/${supplier.supid}"/>">DELETE</a>/
+			<a href="<c:url value="deleteSupplier/${supplier.supid}"/>">DELETE</a>
 			<a href="<c:url value="updateSupplier/${supplier.supid}"/>">UPDATE</a>
 		</td>
 	</tr>

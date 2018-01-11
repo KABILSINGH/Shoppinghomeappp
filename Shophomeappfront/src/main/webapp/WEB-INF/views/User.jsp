@@ -13,13 +13,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" language="javascript">
-function formValidation()  
+ function formValidation()  
 {  
-var pword = document.registration.pword;  
-var uname = document.registration.uname;  
-var adss = document.registration.adss;    
-var email = document.registration.email;  
-var mnum=document.registration.mnum;
+var pword = document.myform.userPassword;  
+var uname = document.myform.userName;  
+var adss = document.myform.userAddress;    
+var email = document.myform.userEmail;  
+var mnum=document.myform.userPhone;
 
 if(allLetter(uname))  
 {  
@@ -118,14 +118,14 @@ return false;
 
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container">
- <%-- <form:form  name="registration"  onSubmit="return formValidation();"> --%>
-<form:form action="AddUser" modelAttribute="user" name="myform"> 
+   <%-- <form:form  name="registration"  onSubmit="return formValidation();">   --%>
+<form:form action="AddUser" modelAttribute="user" name="myform"  > 
 <div class="col-lg-12">
 
 	<div class="form-group">
 	<div style="margin-bottom: 25px" class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>    
-    <input id="login-userName" type="text" class="form-control" name="userName" value="" placeholder="username or email"required>                                        
+    <input id="login-userName" type="text" class="form-control" name="userName" value="" placeholder="Please enter your name"required>                                        
     </div>
     </div>    
 	
@@ -163,9 +163,9 @@ return false;
 	
 		
 </div>
-
-
 </form:form>
+
+<%-- </form:form> --%>
 <jsp:include page="footer.jsp"></jsp:include>
 
 </body>

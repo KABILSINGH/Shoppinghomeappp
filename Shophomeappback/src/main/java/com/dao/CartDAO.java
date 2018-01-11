@@ -7,9 +7,9 @@ import com.model.Cart;
 
 public interface CartDAO 
 {
-	public void insert(Cart cart);
+	public void insert(Cart cm);
 	public List<Cart> findCartById(String userID) ;
-	public Cart getCartByID(int cartID,String UserEmail);
-	public void deleteCart(int cartID);
-	public void update(Cart cr);
+	public Cart getCartByID(int cartId,String userEmail);
+	public void deleteCart(int cartId);
+	public void update(Cart cm);
 }

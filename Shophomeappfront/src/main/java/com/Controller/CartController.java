@@ -19,6 +19,8 @@ import com.dao.SupplierDAO;
 import com.dao.UserDAO;
 import com.daoimpl.CartDAOImpl;
 import com.daoimpl.OrdersDAOImpl;
+import com.daoimpl.ProductDAOImpl;
+import com.daoimpl.UserDAOImpl;
 import com.model.Cart;
 import com.model.Orders;
 import com.model.Product;
@@ -39,6 +41,10 @@ public class CartController {
 	SupplierDAO supplierDAO;
 	@Autowired
 	OrdersDAOImpl ordersDaoImpl;
+	@Autowired
+	ProductDAOImpl productDaoImpl;
+	@Autowired
+	UserDAOImpl userDaoImpl;
 	
 
 	
@@ -65,9 +71,9 @@ public class CartController {
 			int price=Integer.parseInt(req.getParameter("pprice"));
 			int quantity = Integer.parseInt(req.getParameter("pstock"));
 			String imgName=req.getParameter("pimage");
-			Cart cartexit = cartDaoImpl.getCartByID(id,userEmail);
+			Cart cartexist = cartDaoImpl.getCartByID( id,userEmail);
 			
-			if(cartexit == null)
+			if(cartexist == null)
 			{
 				Cart cm = new Cart();
 				
@@ -79,16 +85,16 @@ public class CartController {
 				cm.setCartUserDetails(u);
 				cartDaoImpl.insert(cm);
 			}
-			else if(cartexit!=null)
+			else if(cartexist!=null)
 			{
 				Cart cm = new Cart();
-				cm.setCartId(cartexit.getCartId());
+				cm.setCartId(cartexist.getCartId());
 				cm.setCartPrice(price);
 				
 				cm.setCartproductId(id);
 				cm.setCartImg(imgName);
 				cm.setCartProductName(productName);
-				cm.setCartQnty(cartexit.getCartQnty()+quantity);
+				cm.setCartQnty(cartexist.getCartQnty()+quantity);
 				User u = userDAO.getUser(userEmail);
 				cm.setCartUserDetails(u);
 				cartDaoImpl.Update(cm);

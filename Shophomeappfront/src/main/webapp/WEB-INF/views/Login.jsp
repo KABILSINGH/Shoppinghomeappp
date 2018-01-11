@@ -31,7 +31,7 @@
     <div class="form-group">
     <div style="margin-bottom: 25px" class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input type="text" class="form-control" placeholder="Enter ID" name="username" required>
+      <input type="text" class="form-control" placeholder="Enter USERNAME" name="username" required>
     </div>
     </div>
     

@@ -86,7 +86,7 @@ tr:hover{background-color:#f5f5f5}
 <td><a href="uhome" class="btn btn-warning">Continue Shopping</a></td>
 
 <c:if test="${not empty cartInfo }">
-<td><a href="/checkout" class="btn btn-success">CheckOut</a></td>
+<td><a href="${pageContext.request.contextPath}/checkout" class="btn btn-success">CheckOut</a></td>
 </c:if>
 </tr>
 </table>

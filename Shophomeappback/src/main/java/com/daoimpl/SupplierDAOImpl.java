@@ -26,7 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.model.Supplier;
 import com.dao.SupplierDAO;
 
-@Repository("SupplierDAO")
+@Repository("Supplierdao")
 public class SupplierDAOImpl implements SupplierDAO
 {
 	@Autowired

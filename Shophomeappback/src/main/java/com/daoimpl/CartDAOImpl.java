@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.model.Cart;
 
-@Repository/*("cartDAO")*/
+@Repository ("cartDAO")
 public class CartDAOImpl 
 {
 	@Autowired
@@ -23,11 +23,11 @@ public class CartDAOImpl
 		
 	}
 	
-	public void insert(Cart cart)
+	public void insert(Cart cm)
 	{
 		Session session = sessionFac.openSession();
 		session.beginTransaction();
-		session.persist(cart);
+		session.persist(cm);
 		session.getTransaction().commit();
 	}
 	
@@ -53,7 +53,7 @@ public class CartDAOImpl
 		return cr;
 		
 }
-	public Cart getCartByID(int cartID, String UserEmail)
+	public Cart getCartByID(int cartId, String userEmail)
 	{
 		Session session = sessionFac.openSession();
 		Cart cr = null;
@@ -61,8 +61,8 @@ public class CartDAOImpl
 		{
 			session.beginTransaction();
 			cr=(Cart)session
-					.createQuery("from Cart where userEmail= :email and cartProductID= id")
-					.setString("email", UserEmail).setInteger("id",cartID).uniqueResult();
+					.createQuery("from Cart where userEmail= :email and cartproductId= id")
+					.setString("email", userEmail).setInteger("id",cartId).uniqueResult();
 			session.getTransaction().commit();
 			return cr;
 			
@@ -74,21 +74,21 @@ public class CartDAOImpl
 		
 	}
 	
-	public void deleteCart(int cartID)
+	public void deleteCart(int cartId)
 	{
 		Session session = sessionFac.openSession();
 		session.beginTransaction();
-		Cart cr= (Cart)session.get(Cart.class, cartID);
+		Cart cr= (Cart)session.get(Cart.class, cartId);
 		session.delete(cr);
-		session .getTransaction().commit();
+		session.getTransaction().commit();
 		
 	}
 	
-	public void Update(Cart cr)
+	public void Update(Cart cm)
 	{
 		Session session = sessionFac.openSession();
 		session.beginTransaction();
-		session.update(cr);
+		session.update(cm);
 		session .getTransaction().commit();
 		
 	}

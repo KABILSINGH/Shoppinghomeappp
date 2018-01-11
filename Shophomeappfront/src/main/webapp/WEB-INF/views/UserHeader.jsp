@@ -47,12 +47,6 @@
           <li><a href="uhome">SAMSUNG</a></li>
           <li><a href="uhome">LG</a></li>
           <li><a href="uhome">BUTTERFLY</a></li> 
-          
-          <%-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-          <c:forEach var="catVal" items="${catList}">
-          <li><a href="${pageContext.request.contextPath}/productCustList?catId=${catVal.catId}">${catVal.catName }</a></li
-          ></c:forEach> --%>
     </ul>
    
       </li>
@@ -61,12 +55,11 @@
  
 </ul>  
 
-
-
     <ul class="nav navbar-nav navbar-right">
     
     
      <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome ${sessionScope.username}</a></li>
+     <!-- <li><a href="userdetails"><span class="glyphicon glyphicon-pencil"></span>EDIT DETAILS</a></li> -->
       <li><a href="index.jsp"><span class="glyphicon glyphicon-log-in"></span> SignOut</a></li>
     </ul>
 

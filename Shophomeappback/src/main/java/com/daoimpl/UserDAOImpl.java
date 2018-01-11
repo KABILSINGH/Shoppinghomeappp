@@ -42,7 +42,7 @@ public class UserDAOImpl implements UserDAO {
 		return listUser;
 	}
 
-	@Transactional
+	/*@Transactional
 	
 	public boolean deleteUser(User user) {
 		try
@@ -56,7 +56,7 @@ public class UserDAOImpl implements UserDAO {
 		System.out.println("Exception Arised:"+e);	
 		return false;
 		}
-	}
+	}*/
 
 
 	public User getUser(String userName) {
@@ -66,7 +66,7 @@ public class UserDAOImpl implements UserDAO {
 		return user;
 	}
 
-	@Transactional
+	/*@Transactional
 	
 	public boolean updateUser(User user) {
 		try
@@ -79,6 +79,6 @@ public class UserDAOImpl implements UserDAO {
 		System.out.println("Exception Arised:"+e);
 		return false;
 		}
-	}
+	}*/
 
 }

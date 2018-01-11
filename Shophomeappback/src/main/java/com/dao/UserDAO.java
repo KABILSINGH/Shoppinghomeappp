@@ -8,8 +8,8 @@ public interface UserDAO
 {
 	public boolean addUser(User user);
 	public List<User> retrieveUser();
-	public boolean deleteUser(User user);
 	public User getUser(String userName);
+	/*public boolean deleteUser(User user);
 	public boolean updateUser(User user);
-	
+	*/
 }
