@@ -19,8 +19,6 @@ import com.dao.SupplierDAO;
 import com.dao.UserDAO;
 import com.daoimpl.CartDAOImpl;
 import com.daoimpl.OrdersDAOImpl;
-import com.daoimpl.ProductDAOImpl;
-import com.daoimpl.UserDAOImpl;
 import com.model.Cart;
 import com.model.Orders;
 import com.model.Product;
@@ -41,22 +39,20 @@ public class CartController {
 	SupplierDAO supplierDAO;
 	@Autowired
 	OrdersDAOImpl ordersDaoImpl;
-	@Autowired
-	ProductDAOImpl productDaoImpl;
-	@Autowired
-	UserDAOImpl userDaoImpl;
+	
+	
 	
 
 	
-	@RequestMapping(value="/productDetails/{catid}")
-	public ModelAndView prodDet(@PathVariable("catid") int catid)
+	/*@RequestMapping(value="/productDetails/{pid}")
+	public ModelAndView prodDet(@PathVariable("pid") int pid)
 	{
 		ModelAndView mv= new ModelAndView();
-		Product p = productDAO.getProduct(catid);
+		Product p = productDAO.getProduct(pid);
 		mv.addObject("product",p);
 		mv.setViewName("productDetails");
 		return mv;
-	}
+	}*/
 	
 	@RequestMapping(value="/addToCart", method=RequestMethod.POST)
 	public ModelAndView addTocart(HttpServletRequest req)

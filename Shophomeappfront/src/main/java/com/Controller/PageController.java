@@ -25,6 +25,11 @@ public class PageController {
 	{
 		return "Login";
 	}
+	@RequestMapping(value="/error")
+	public String showerrorPage()
+	{
+		return "error";
+	}
 	
 	@RequestMapping(value="/clienthome")
 	public String showClientHomePage()

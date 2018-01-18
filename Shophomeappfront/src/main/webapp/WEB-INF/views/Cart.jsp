@@ -63,15 +63,15 @@ tr:hover{background-color:#f5f5f5}
 <tr><td colspan="7" align="center">No Record Exists</td></tr>
 
 </c:if>
-<c:forEach var="v" varStatus="st" items="${cartInfo }">
+<c:forEach var="p" varStatus="st" items="${cartInfo }">
 <tr>
 
-<td><c:out value="${c.cartProductName }"></c:out></td>
-<td><c:out value="${c.cartQnty }"></c:out></td>
-<td><c:out value="${c.cartPrice }"></c:out></td> <td><img src="${pageContext.request.contextPath }/resources/Images/<c:out value='${c.cartImg }'></c:out>"/></td>  
-<td><c:out value="${c.cartQnty * c.cartPrice }"></c:out></td>
-<td><a href="${pageContext.request.contextPath }/deletePCart/${c.cartID}" class="btn btn-lg btn-danger"><i class="fa fa-trash="></i> </a><c:out value="${c.cartProductName }"></c:out></td>
-<c:set var="gtot" value="${gtot + c.cartPrice * c.cartQnty }"></c:set>
+<td><c:out value="${p.cartProductName }"></c:out></td>
+<td><c:out value="${p.cartQnty }"></c:out></td>
+<td><c:out value="${p.cartPrice }"></c:out></td> <td><img src="${pageContext.request.contextPath }/resources/Images/<c:out value='${p.cartImg }'></c:out>"/></td>  
+<td><c:out value="${p.cartQnty * c.cartPrice }"></c:out></td>
+<td><a href="${pageContext.request.contextPath }/deletePCart/${p.cartID}" class="btn btn-lg btn-danger"><i class="fa fa-trash="></i> </a><c:out value="${p.cartProductName }"></c:out></td>
+<c:set var="gtot" value="${gtot + p.cartPrice * p.cartQnty }"></c:set>
 
 </tr>
 </c:forEach>

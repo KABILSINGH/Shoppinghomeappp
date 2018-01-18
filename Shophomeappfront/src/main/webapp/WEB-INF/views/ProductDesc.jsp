@@ -9,29 +9,7 @@
 <body>
 
 <jsp:include page="UserHeader.jsp"></jsp:include>
- <%-- <table>
-
-	 <tr>
-		<td rowspan="5">
-			<img src="<c:url value="/resources/images/${product.productId}.jpg"/>"  width="250px" height="250px" />
-		</td>
-		
-		<td>&nbsp;</td>
-	</tr>
-
-	<tr>
-		<td>Product Name :${product.productName}</td>
-	</tr>
-	<tr>
-		<td>Product Desc :${product.productDesc}</td>
-	</tr>
-		<tr>
-		<td>Product Price :${product.price}</td>
-	</tr>
-		
-
-</table> --%>
-
+ 
 <div class="container">
 <div class="row">
 <div class="col-xs-4 item-photo">
@@ -56,17 +34,11 @@
 	<input type="number" class="form-control" name="quantity" required>
 	
 	<input class="btn btn-primary btn-lg" type="submit" value="Add To Cart">
-
-</div>
-</div>
-
-
-
-</ul>
-
-
-</div>
 </form>
+</div>
+</div>
+
+</div>
 </div>
 </body>
 </html>

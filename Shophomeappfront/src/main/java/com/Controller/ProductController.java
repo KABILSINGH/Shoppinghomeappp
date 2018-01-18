@@ -40,21 +40,6 @@ public class ProductController
 	
 	
 	
-	/*
-	@RequestMapping(value="AddProduct",method=RequestMethod.POST)
-	public String addProduct(@ModelAttribute("product")Product product,Model m)
-	{
-		productDAO.addProduct(product);
-		
-		List<Product> listProduct=productDAO.retrieveProduct();
-		m.addAttribute("productList",listProduct);
-		m.addAttribute("categoryList",this.getCatgories());
-		m.addAttribute("supplierList", this.getSuppliers());
-				return "Product";
-	}*/
-	
-	
-	
 	@RequestMapping(value="product",method=RequestMethod.GET)
 	public String showProduct(Model m)
 	{
