@@ -13,12 +13,6 @@ public class Product  {
 	
 	String pname,pdesc,catname;
 	int pstock,pprice,supid;
-	/*@ManyToOne(fetch= FetchType.EAGER)
-	@JoinColumn(name="catid")
-	private Category category;
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="supid")
-	private Supplier supplier;*/
 	@Transient
 	MultipartFile pimage;
 	public int getPid() {

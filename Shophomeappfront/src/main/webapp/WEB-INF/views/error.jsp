@@ -12,7 +12,7 @@
 
 <div class="container">
 <h1>ERROR!!</h1>
-<p>Please enter correct username and password..</p>
+  <h3 style="color:red;">Please enter correct username and password!!</h3>
   <div class="row">
     <div class="col-md-4">
       <div class="thumbnail">

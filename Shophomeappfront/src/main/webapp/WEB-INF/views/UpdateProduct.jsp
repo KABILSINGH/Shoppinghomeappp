@@ -14,10 +14,10 @@
 	<tr>
 		<td colspan="2">Product Module</td>
 	</tr>
-	<tr>
+	<%-- <tr>
 		<td>Product ID</td>
 		<td><form:input path="pid"/></td>
-	</tr>
+	</tr> --%>
 	<tr>
 		<td>Product Name</td>
 		<td><form:input path="pname"/></td>

@@ -31,7 +31,7 @@
     <div class="form-group">
     <div style="margin-bottom: 25px" class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input type="text" class="form-control" placeholder="Enter USERNAME" name="username" required>
+      <input type="text" class="form-control" placeholder="ENTER USERNAME" name="username" required>
     </div>
     </div>
     
@@ -39,7 +39,7 @@
     <div class="form-group">
     <div style="margin-bottom: 25px" class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input type="password" class="form-control" placeholder="Enter password" name="password" size="35" required>
+      <input type="password" class="form-control" placeholder="ENTER PASSWORD" name="password" size="35" required>
     </div>
     </div>
        

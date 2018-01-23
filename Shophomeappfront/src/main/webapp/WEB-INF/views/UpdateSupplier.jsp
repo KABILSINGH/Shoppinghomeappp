@@ -14,10 +14,10 @@
 	<tr>
 		<td colspan="2">Supplier Module</td>
 	</tr>
-	<tr>
+	<%-- <tr>
 		<td>Supplier ID</td>
 		<td><form:input path="supid"/></td>
-	</tr>
+	</tr> --%>
 	<tr>
 		<td>Supplier Name</td>
 		<td><form:input path="supname"/></td>

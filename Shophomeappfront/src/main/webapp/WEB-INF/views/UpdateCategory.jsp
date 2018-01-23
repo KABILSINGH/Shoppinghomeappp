@@ -17,10 +17,10 @@
 	<tr>
 		<td colspan="2">Category Module</td>
 	</tr>
-	<tr>
+	<%-- <tr>
 		<td>Category ID:</td>
 		<td><form:input path="catid"/></td>
-	</tr>
+	</tr> --%>
 	<tr>
 		<td>Category Name</td>
 		<td><form:input path="catname"/></td>

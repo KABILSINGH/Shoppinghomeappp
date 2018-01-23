@@ -24,12 +24,23 @@
 <h5>${product.pimage}</h5> 
 <div class="section" style="padding-bottom:20px;">
 
-<form action="${pageContext.request.contextPath}/addToCart" method="post">
+<form action="${pageContext.request.contextPath}/cart" >
 	<input type="hidden" value="${product .pid }" name="pid">
 	<input type="hidden" value="${product.pprice }" name="pprice">
 	<input type="hidden" value="${product.pname }" name="pname">
 <%-- 	<input type="hidden" value="${product.pimage }" name="pimage"> --%>
-
+<c:forEach items="${productList}" var="product">
+	<tr bgcolor="cyan">
+		<td>${product.pid}</td>
+		<td>${product.pname}</td>
+		<td>${product.pdesc}</td>
+		<td>${product.pstock}</td>
+		<td>${product.pprice}</td>
+		<td>${product.catname}</td>
+		<td>${product.supid}</td>
+		
+	</tr>
+</c:forEach>
 	
 	<input type="number" class="form-control" name="quantity" required>
 	
