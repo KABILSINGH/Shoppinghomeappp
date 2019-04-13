@@ -10,16 +10,13 @@ import com.model.Orders;
 
 @Repository
 public class OrdersDAOImpl {
-
 	@Autowired
 	SessionFactory sessionFac;
-	
 	public OrdersDAOImpl(SessionFactory sessionFac)
 	{
 		super();
 		this.sessionFac=sessionFac;
 	}
-	
 	@Transactional
 	public void addOrders(Orders orders)
 	{

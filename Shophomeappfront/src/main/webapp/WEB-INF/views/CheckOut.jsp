@@ -17,8 +17,7 @@
 
 </head>
 <body>
-<jsp:include page="UserHome.jsp"></jsp:include>
-
+<jsp:include page="UserHeader.jsp"></jsp:include>
 <div class="container">
 <div class="row">
 	<div class="col-sm-9 jumbotron">
@@ -80,6 +79,7 @@
 		</tr>
 		
 		<tr><td colspan="2"><input type="number" min="1" max="12" name="month" placeholder="MM"></tr>
+		<td>&nbsp;&nbsp;&nbsp;</td>
 		<tr><td colspan="2"><input type="number" min="1" max="99" name="YY" placeholder="YY"></tr>
 		<td>&nbsp;&nbsp;&nbsp;</td>
 		<tr><td colspan="2"><input type="password" min="1" max="999" name="CVV" placeholder="MM"></tr>

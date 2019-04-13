@@ -19,19 +19,14 @@ import com.model.Orders;
 import com.model.Product;
 import com.model.Supplier;
 import com.model.User;
-
-
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com")
 public class DBConfig 
-{
-	
-	//Creating a DataSource Bean
+{	//Creating a DataSource Bean
 	@Bean(value="dataSource")
 	public DataSource getH2DataSource()
-	{
-		DriverManagerDataSource driverMgrDataSource=new DriverManagerDataSource();
+	{	DriverManagerDataSource driverMgrDataSource=new DriverManagerDataSource();
 		driverMgrDataSource.setDriverClassName("org.h2.Driver");
 		driverMgrDataSource.setUrl("jdbc:h2:tcp://localhost/~/kab");
 		driverMgrDataSource.setUsername("kab");
@@ -39,15 +34,12 @@ public class DBConfig
 		System.out.println("started");
 		return driverMgrDataSource;
 	}
-	
 	//Session Factory Bean Created.
 	@Bean(name="sessionFactory")
 	public SessionFactory getSessionFactory()
-	{
-		Properties hibernateProperties=new Properties();
+	{	Properties hibernateProperties=new Properties();
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto","update");
 		hibernateProperties.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
-		
 		LocalSessionFactoryBuilder localSessionFacBuilder=new LocalSessionFactoryBuilder(getH2DataSource());
 		localSessionFacBuilder.addProperties(hibernateProperties);
 		localSessionFacBuilder.addAnnotatedClass(Category.class);
@@ -56,7 +48,6 @@ public class DBConfig
 		localSessionFacBuilder.addAnnotatedClass(User.class);
 		localSessionFacBuilder.addAnnotatedClass(Cart.class);
 		localSessionFacBuilder.addAnnotatedClass(Orders.class);
-		
 		SessionFactory sessionFactory=localSessionFacBuilder.buildSessionFactory();
 		System.out.println("Session Factory Object Created");
 		return sessionFactory;

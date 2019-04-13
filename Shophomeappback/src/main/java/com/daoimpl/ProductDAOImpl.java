@@ -18,69 +18,58 @@ public class ProductDAOImpl implements ProductDAO
 {
 	@Autowired
 	SessionFactory sessionFactory;
-
 	@Transactional
-	
 	public boolean addProduct(Product product) 
 	{
 		try
 		{
-		sessionFactory.getCurrentSession().saveOrUpdate(product);
-		return true;
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
+			return true;
 		}
 		catch(Exception e)
 		{
-		return false;
+			return false;
 		}
-	
-	}
 
-	
+	}
 	public List<Product> retrieveProduct() {
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from Product");
 		List<Product> listProduct=query.list();
 		session.close();
-		
-		
 		return listProduct;
 	}
-@Transactional
-	
+	@Transactional
 	public boolean deleteProduct(Product product) {
 		try
 		{
-		Session session=sessionFactory.getCurrentSession();
-		session.delete(product);
-		return true;
+			Session session=sessionFactory.getCurrentSession();
+			session.delete(product);
+			return true;
 		}
 		catch(Exception e)
 		{
-		System.out.println("Exception Arised:"+e);	
-		return false;
+			System.out.println("Exception Arised:"+e);	
+			return false;
 		}
 	}
-
-	
 	public Product getProduct(int pid) {
 		Session session=sessionFactory.openSession();
 		Product product=(Product)session.get(Product.class,pid);
 		session.close();
 		return product;
 	}
-
 	@Transactional
-	
 	public boolean updateProduct(Product product) {
 		try
 		{
-		sessionFactory.getCurrentSession().saveOrUpdate(product);
-		return true;
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
+			return true;
 		}
 		catch(Exception e)
 		{
-		System.out.println("Exception Arised:"+e);
-		return false;
+			System.out.println("Exception Arised:"+e);
+			return false;
 		}
 	}
 }

@@ -17,9 +17,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
-	
 	@Transactional
-	
 	public boolean addUser(User user) {
 		try
 		{
@@ -32,8 +30,6 @@ public class UserDAOImpl implements UserDAO {
 		return false;
 		}
 	}
-
-
 	public List<User> retrieveUser() {
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from User");
@@ -41,9 +37,7 @@ public class UserDAOImpl implements UserDAO {
 		session.close();
 		return listUser;
 	}
-
 	/*@Transactional
-	
 	public boolean deleteUser(User user) {
 		try
 		{
@@ -57,8 +51,6 @@ public class UserDAOImpl implements UserDAO {
 		return false;
 		}
 	}*/
-
-
 	public User getUser(String userName) {
 		Session session=sessionFactory.openSession();
 		User user=(User)session.get(User.class,userName);
@@ -67,7 +59,6 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	/*@Transactional
-	
 	public boolean updateUser(User user) {
 		try
 		{
@@ -80,5 +71,4 @@ public class UserDAOImpl implements UserDAO {
 		return false;
 		}
 	}*/
-
 }

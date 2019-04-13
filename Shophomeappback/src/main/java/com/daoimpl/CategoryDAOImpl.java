@@ -9,9 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import com.model.Category;
 import com.dao.CategoryDAO;
+import com.model.Category;
 
 @Repository("CategoryDAO")
 public class CategoryDAOImpl implements CategoryDAO
@@ -19,28 +18,22 @@ public class CategoryDAOImpl implements CategoryDAO
 	@Autowired
 	SessionFactory sessionFactory;
 	@Transactional
-
-	
 	public boolean addCategory(Category category) {
 		try
 		{
-		sessionFactory.getCurrentSession().saveOrUpdate(category);
-		return true;
+			sessionFactory.getCurrentSession().saveOrUpdate(category);
+			return true;
 		}
 		catch(Exception e)
 		{
-		return false;
+			return false;
 		}
 	}
-
-	
 	public List<Category> retrieveCategory() {
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from Category");
 		List<Category> listCategory=query.list();
 		session.close();
-		
-		
 		return listCategory;
 	}
 	public Category getCategory(int catid) 
@@ -50,35 +43,33 @@ public class CategoryDAOImpl implements CategoryDAO
 		session.close();
 		return category;
 	}
-@Transactional
-	
+	@Transactional
 	public boolean deleteCategory(Category category) 
 	{	
 		try
 		{
-		Session session=sessionFactory.getCurrentSession();
-		session.delete(category);
-		return true;
+			Session session=sessionFactory.getCurrentSession();
+			session.delete(category);
+			return true;
 		}
 		catch(Exception e)
 		{
-		System.out.println("Exception Arised:"+e);	
-		return false;
+			System.out.println("Exception Arised:"+e);	
+			return false;
 		}
 	}
-@Transactional
-
-public boolean updateCategory(Category category) 
-{
-	try
+	@Transactional
+	public boolean updateCategory(Category category) 
 	{
-	sessionFactory.getCurrentSession().saveOrUpdate(category);
-	return true;
+		try
+		{
+			sessionFactory.getCurrentSession().saveOrUpdate(category);
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception Arised:"+e);
+			return false;
+		}
 	}
-	catch(Exception e)
-	{
-	System.out.println("Exception Arised:"+e);
-	return false;
-	}
-}
 }

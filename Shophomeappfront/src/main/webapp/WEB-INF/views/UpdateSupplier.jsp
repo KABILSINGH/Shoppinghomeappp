@@ -35,7 +35,7 @@
 </table>
 </form:form>
 
-<table cellspacing="2" align="center">
+<%-- <table cellspacing="2" align="center">
 <tr bgcolor="gray">
 	<td>Supplier ID</td>
 	<td>Supplier Name</td>
@@ -54,6 +54,6 @@
 	</tr>
 </c:forEach>
 
-</table>
+</table> --%>
 </body>
 </html>

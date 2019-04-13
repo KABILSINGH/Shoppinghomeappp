@@ -78,7 +78,7 @@ tr:hover{background-color:#f5f5f5}
             <tr>
             <td><a href="userHome" class="btn btn-warning">Continue Shopping</a></td>
 
-			<td><a href="ack" class="btn btn-success">Checkout</a></td>
+			<td><a href="ack" class="btn btn-success" name = "productId" value = "${list1.productId}">Checkout</a></td>
             </tr>
             </table>
             </div>

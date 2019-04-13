@@ -31,34 +31,26 @@ public class ProductController
 	ProductDAO productDAO;
 	@Autowired
 	CategoryDAO categoryDAO;
-	
 	@Autowired
 	SupplierDAO supplierDAO;
-	
 	@Autowired
 	UserDAO userDAO;
-	
-	
-	
 	@RequestMapping(value="product",method=RequestMethod.GET)
 	public String showProduct(Model m)
 	{
 		Product product=new Product();
 		m.addAttribute(product);
-		
 		List<Product> listProduct=productDAO.retrieveProduct();
 		m.addAttribute("productList",listProduct);
 		m.addAttribute("categoryList",this.getCatgories());
 		m.addAttribute("supplierList", this.getSuppliers());
-				return "Product";
+		return "Product";
 	}
 	@RequestMapping(value="updateProduct/{pid}",method=RequestMethod.GET)
 	public String updateProduct(@PathVariable("pid") int pid,Model m)
 	{
 		Product product=productDAO.getProduct(pid);
-	
 		m.addAttribute(product);
-		
 		List<Product> listProduct=productDAO.retrieveProduct();
 		m.addAttribute("productList",listProduct);
 		m.addAttribute("categoryList",this.getCatgories());
@@ -81,15 +73,10 @@ public class ProductController
 		Product product=productDAO.getProduct(pid);
 		m.addAttribute(product);
 		productDAO.deleteProduct(product);
-						
 		String path="D:\\Eclipse files\\Shophomeappfront\\src\\main\\webapp\\resources\\Images\\";
-		
 		String totalFileWithPath=path+String.valueOf(product.getPid())+".jpg";
-		
 		File productImage = new File(totalFileWithPath);
-	
 		productImage.delete();
-				
 		List<Product> listProduct=productDAO.retrieveProduct();
 		m.addAttribute("productList",listProduct);
 		return "Product";
@@ -98,24 +85,20 @@ public class ProductController
 	{
 		List<Category> listCategories = categoryDAO.retrieveCategory();
 		LinkedHashMap<Integer, String> categoriesList = new LinkedHashMap<Integer,String>();
-		
 		for(Category category:listCategories)
 		{
-			 categoriesList.put(category.getCatid(),category.getCatname());
-			 
+			categoriesList.put(category.getCatid(),category.getCatname());
 		}
 		return categoriesList;
 	}
-	
+
 	public LinkedHashMap<Integer, Integer> getSuppliers()
 	{
 		List<Supplier> listSuppliers = supplierDAO.retrieveSupplier();
 		LinkedHashMap<Integer, Integer> suppliersList = new LinkedHashMap<Integer,Integer>();
-		
 		for(Supplier supplier:listSuppliers)
 		{
 			suppliersList.put(supplier.getSupid(),supplier.getSupid());
-			 
 		}
 		return suppliersList;
 	}
@@ -123,15 +106,9 @@ public class ProductController
 	public String AddProduct(@ModelAttribute("product")Product product,@RequestParam("pimage")MultipartFile fileDetail,Model m)
 	{
 		productDAO.addProduct(product);
-				
 		String path="D:\\Eclipse files\\Shophomeappfront\\src\\main\\webapp\\resources\\Images\\";
-		
 		String totalFileWithPath=path+String.valueOf(product.getPid())+".jpg";
-		
 		File productImage = new File(totalFileWithPath);
-	
-		
-		
 		if(!fileDetail.isEmpty())
 		{
 			try
@@ -151,7 +128,6 @@ public class ProductController
 		{
 			m.addAttribute("error","Problem in file Uploading");
 		}
-		
 		Product product1= new Product();
 		m.addAttribute(product1);
 		List<Product> listProduct=productDAO.retrieveProduct();
@@ -163,7 +139,6 @@ public class ProductController
 	{
 		m.addAttribute("catList",categoryDAO.retrieveCategory());
 		m.addAttribute("supList",supplierDAO.retrieveSupplier());
-		
 	}
 	@ModelAttribute
 	public void addAttributes(Model m)
@@ -201,7 +176,6 @@ public class ProductController
 		m.addAttribute("supplierList", this.getSuppliers());
 		return "Uhome";
 	}
-
 	@RequestMapping(value="productDesc/{pid}")
 	public String showProductDesc(@PathVariable("pid")int pid,Model m)
 	{
